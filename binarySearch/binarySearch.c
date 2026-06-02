@@ -37,7 +37,7 @@
 int binarySearch(int arr[], int n, int x) {
     int st = 0;
     int end = n-1;
-    while (st <= end) {
+    while (st <= end) { // Loop will run until st is less than or equal to end
         int mid = st + (end - st) / 2;
 
         // Check if x is present at mid
