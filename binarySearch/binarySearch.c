@@ -14,7 +14,7 @@ int binarySearch(int arr[], int l, int r, int x) {
 int main() {
     int arr[] = {2, 4, 6, 8, 10};
     int n = sizeof(arr) / sizeof(arr[0]);
-    int x = 6;
+    int x = 60;
     int result = binarySearch(arr, 0, n - 1, x);
     if (result == -1)
         printf("Element not found in array\n");
