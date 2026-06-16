@@ -1,30 +1,43 @@
 #include <stdio.h>
 
+
 void merge(int arr[], int st, int mid, int end) {
-    int temp[end - st + 1];
+    int i, j, k;
+    int n1 = mid - st + 1;
+    int n2 = end - mid;
 
-    int i = st;
-    int j = mid + 1;
-    int k = 0;
+    int L[n1], R[n2];
 
-    while (i <= mid && j <= end) {
-        if (arr[i] <= arr[j]) {
-            temp[k++] = arr[i++];
+    for (i = 0; i < n1; i++)
+        L[i] = arr[st + i];
+    for (j = 0; j < n2; j++)
+        R[j] = arr[mid + 1 + j];
+
+    i = 0;
+    j = 0;
+    k = st;
+
+    while (i < n1 && j < n2) {
+        if (L[i] <= R[j]) {
+            arr[k] = L[i];
+            i++;
         } else {
-            temp[k++] = arr[j++];
+            arr[k] = R[j];
+            j++;
         }
+        k++;
     }
 
-    while (i <= mid) {
-        temp[k++] = arr[i++];
+    while (i < n1) {
+        arr[k] = L[i];
+        i++;
+        k++;
     }
 
-    while (j <= end) {
-        temp[k++] = arr[j++];
-    }
-
-    for (i = st, k = 0; i <= end; i++, k++) {
-        arr[i] = temp[k];
+    while (j < n2) {
+        arr[k] = R[j];
+        j++;
+        k++;
     }
 }
 
