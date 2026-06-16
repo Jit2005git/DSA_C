@@ -12,9 +12,18 @@ void bubblesort(int arr[], int n) {
     }
 }
 int main(){
-    int arr[];
+    int arr[100];
     int n;
     printf("Enter the number of elements: ");
     scanf("%d", &n);
     printf("Enter the elements: ");
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+    bubblesort(arr, n);
+    printf("Sorted array: ");
+    for (int i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+    return 0;
 }
