@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
-int main(){}
+int main(){
     int * ptr;
     int n;
     printf("Enter the size of the array you want to build:\n");
